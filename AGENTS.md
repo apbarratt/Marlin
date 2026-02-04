@@ -10,9 +10,10 @@ Do not switch to another base (for example `upstream/bugfix-2.1.x`) unless the u
 
 ## Required Preflight
 
-Before editing `Marlin/Configuration.h` or `Marlin/Configuration_adv.h`, run:
+Before editing `Marlin/Configuration.h` or `Marlin/Configuration_adv.h`, refresh the moving tag and run:
 
 ```bash
+git fetch upstream +refs/tags/latest-2.1.x:refs/tags/latest-2.1.x
 git rev-list --left-right --count $BASE_REF...HEAD
 git diff --stat $BASE_REF -- Marlin/Configuration.h Marlin/Configuration_adv.h
 ```
